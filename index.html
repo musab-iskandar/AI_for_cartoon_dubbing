@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الذكاء الاصطناعي في دبلجة الرسوم المتحركة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--secondary-color);
+        }
+
+        /* Chart Section */
+        .chart-container {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Grid Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e0e7ff;
+            color: var(--secondary-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--text-main);
+            color: white;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>الذكاء الاصطناعي التوليدي في دبلجة الرسوم المتحركة</h1>
+            <p>مشروع بحثي يستعرض كيف تقود نماذج LLMs و TTS ثورة في توطين المحتوى الترفيهي بلهجات محلية، وكسر حواجز اللغة بأقل التكاليف مع الحفاظ على الأداء العاطفي.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <h2 class="section-title">الأثر الاقتصادي: مقارنة التكلفة (للحلقة الواحدة)</h2>
+        <div class="chart-container">
+            <canvas id="costChart"></canvas>
+        </div>
+
+        <h2 class="section-title">النماذج التقنية (Deep Learning Models)</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="badge">معالجة النصوص</span>
+                <h3>Transformers (LLMs)</h3>
+                <p>تُستخدم هذه النماذج لفهم السياق الطويل وتجاوز الترجمة الحرفية. تقوم بتكييف الحوارات والنكات لتناسب اللهجات المحلية (Localization) مثل النجدية أو المصرية بدقة عالية.</p>
+            </div>
+            <div class="card">
+                <span class="badge">توليد الصوت</span>
+                <h3>VITS Model</h3>
+                <p>نموذج متقدم لتحويل النص إلى كلام (TTS). يعتمد على بنية End-to-End لإنتاج أصوات طبيعية، مما يقلل من النبرة الآلية ويسمح بالتحكم الدقيق في الإيقاع والمشاعر.</p>
+            </div>
+            <div class="card">
+                <span class="badge">استنساخ و تنقية</span>
+                <h3>Diffusion Models</h3>
+                <p>تُستخدم لاستنساخ خامة الصوت (Voice Cloning) بدقة شديدة من مقاطع صوتية قصيرة جداً (Zero-shot TTS)، وتساهم في تنقية المسارات الصوتية في بيئات الاستوديوهات.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">الشركات الرائدة (حالات دراسية)</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>ElevenLabs</h3>
+                <p>توفر أداة AI Dubbing لترجمة الفيديوهات بـ 29 لغة مع الحفاظ على صوت المتحدث الأصلي. قلصت وقت الدبلجة بنسبة تتجاوز 80% بتكلفة منخفضة جداً.</p>
+            </div>
+            <div class="card">
+                <h3>Deepdub</h3>
+                <p>تعمل مع استوديوهات هوليوود وتركز على "الدبلجة العاطفية". تحافظ على البصمة الصوتية الدقيقة للممثل الأصلي باستخدام نماذج Voice Cloning متطورة.</p>
+            </div>
+            <div class="card">
+                <h3>Papercup</h3>
+                <p>متخصصة في دبلجة الوثائقيات والبرامج لمنصات مثل YouTube. تستخدم أنظمة TTS مع مراجعة بشرية (Human-in-the-loop) للوصول إلى دقة نطق مثالية.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>تم إعداد هذا الموقع كجزء من مشروع بحثي - 2026</p>
+    </footer>
+
+    <script>
+        const ctx = document.getElementById('costChart').getContext('2d');
+        
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['الدبلجة البشرية التقليدية', 'الدبلجة عبر الذكاء الاصطناعي'],
+                datasets: [{
+                    label: 'التكلفة التقديرية (بالدولار الأمريكي)',
+                    data: [50000, 200], // الأرقام بناءً على التقرير البحثي
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)', // لون أحمر للتقليدية (تكلفة عالية)
+                        'rgba(37, 99, 235, 0.7)'   // لون أزرق للذكاء الاصطناعي (تكلفة منخفضة)
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(37, 99, 235, 1)'
+                    ],
+                    borderWidth: 1,
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false // إخفاء المربع الإرشادي لأن التسميات واضحة
+                    },
+                    tooltip: {
+                        titleFont: { family: 'Cairo' },
+                        bodyFont: { family: 'Cairo' }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'التكلفة ($)',
+                            font: { family: 'Cairo', size: 14 }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: { family: 'Cairo', size: 14 }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
